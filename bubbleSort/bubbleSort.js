@@ -32,7 +32,8 @@
 
 // Feel free to add helper functions if needed.
 
-
+//Time Complexity for No Extra Credit O(n^2) where n is length of array
+// Time Complecity for Extra Credit O(n) where n is length of array
 var bubbleSort = function(array) {
   var iterationCount = 0;
   var Counter = 0;
