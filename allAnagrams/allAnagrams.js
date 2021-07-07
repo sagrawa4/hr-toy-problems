@@ -12,6 +12,29 @@
   * console.log(anagrams); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-var allAnagrams = function(string) {
-  // Your code here.
+
+ var allAnagrams = function(string) {
+   if(string.length < 2) {
+     return string;
+   }
+  var result=[];
+
+  for( var i=0; i< string.length; i++) {
+    var myChar = string[i];
+
+    if(string.indexOf(myChar) != i) {
+      continue;
+    }
+
+    var leftOutString = string.slice(0, i) + string.slice(i + 1, string.length);
+
+    for(var k of allAnagrams(leftOutString)) {
+      result.push(myChar + k);
+    }
+  }
+
+  return result;
 };
+
+var res = allAnagrams('rat');
+console.log(res);
